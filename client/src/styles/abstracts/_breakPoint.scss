@@ -1,0 +1,22 @@
+@mixin BreakPoint($deviceType) {
+  @if $deviceType == phone {
+    @media only screen and (max-width: 37.5rem) {
+      @content;
+    } //600px
+  }
+  @if $deviceType == tab-port {
+    @media only screen and (max-width: 56.25rem) {
+      @content;
+    } //900px
+  }
+  @if $deviceType == tab-land {
+    @media only screen and (max-width: 75rem) {
+      @content;
+    } //1200px
+  }
+  @if $deviceType == big-desktop {
+    @media only screen and (min-width: 112.5rem) {
+      @content;
+    } //1800
+  }
+}

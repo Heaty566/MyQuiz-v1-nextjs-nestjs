@@ -1,0 +1,52 @@
+.icon {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        &__wrapper {
+                display: block;
+        }
+        &--2 {
+                height: 1.6rem;
+                width: 1.6rem;
+        }
+
+        &--3 {
+                height: 2.4rem;
+                width: 2.4rem;
+        }
+
+        &--8 {
+                height: 6.4rem;
+                width: 6.4rem;
+        }
+
+        &--6 {
+                height: 4.8rem;
+        }
+}
+
+.f {
+        &--c {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+
+        &--s {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+        }
+
+        &--b {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        }
+
+        &--e {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+        }
+}

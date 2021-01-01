@@ -1,0 +1,25 @@
+.pagination {
+        padding: $ruler;
+        @include FlexCenter(center);
+
+        &__indicator {
+                outline: none;
+                border: none;
+                height: 2.4rem;
+                margin: 0 $ruler;
+                width: 2.4rem;
+                cursor: pointer;
+                border-radius: 0.3rem;
+                color: $primary-font-color;
+                background-color: $secondary-font-color;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                        background-color: $primary-color-dark;
+                }
+
+                &--active {
+                        background-color: $primary-color-dark;
+                }
+        }
+}

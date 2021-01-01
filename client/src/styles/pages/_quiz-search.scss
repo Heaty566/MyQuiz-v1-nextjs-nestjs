@@ -1,0 +1,73 @@
+@import "../initial.scss";
+
+.quiz-search {
+        &__container {
+                display: grid;
+                justify-content: center;
+                column-gap: $ruler * 4;
+                row-gap: $ruler * 4;
+                grid-template-columns: repeat(3, minmax(20rem, 25.6rem));
+
+                grid-template-rows: repeat(4, 14.4rem);
+                @include BreakPoint(tab-land) {
+                        grid-template-columns: repeat(2, minmax(20rem, 25.6rem));
+                        grid-template-rows: repeat(6, 14.4rem);
+                }
+                @include BreakPoint(tab-port) {
+                        grid-template-columns: repeat(1, minmax(20rem, 80%));
+                        grid-template-rows: repeat(12, 14.4rem);
+                }
+        }
+
+        &__wrapper {
+                margin-bottom: $ruler * 2;
+                flex-direction: column;
+                & > *:first-child {
+                        margin-bottom: $ruler;
+                }
+        }
+
+        &__box {
+                max-width: 233px;
+                display: none;
+                padding: $ruler $ruler * 2;
+                background-color: $primary-color-main;
+                border-radius: 0.5rem;
+
+                @include BreakPoint(tab-port) {
+                        @include FlexCenter(space-between);
+                }
+                & .search {
+                        &__input {
+                                font-size: 1.4rem;
+                                margin-left: $ruler;
+
+                                color: $primary-font-color;
+                                background-color: transparent;
+                                display: block;
+                                outline: none;
+                                border: none;
+                                &::placeholder {
+                                        transition: 0.2s ease-in-out;
+                                        color: $primary-font-color;
+                                        opacity: 0.7;
+                                }
+
+                                &:hover {
+                                        &::placeholder {
+                                                opacity: 1;
+                                        }
+                                }
+                        }
+
+                        &__icon {
+                                height: 1.8rem;
+                                width: 1.8rem;
+                        }
+                }
+        }
+
+        &--bottom {
+                margin-top: $ruler * 4;
+        }
+}

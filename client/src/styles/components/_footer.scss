@@ -1,0 +1,58 @@
+.footer {
+        padding: $ruler * 4 $ruler * 16;
+        margin-top: $ruler * 10;
+        background-color: $primary-color-dark;
+        @include BreakPoint(tab-port) {
+                padding: $ruler * 4 $ruler * 4;
+        }
+        &__container {
+                &--top {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-evenly;
+                        @include BreakPoint(tab-port) {
+                                flex-direction: column;
+
+                                & > * {
+                                        margin-bottom: 1.6rem;
+                                }
+                        }
+                }
+
+                &--bottom {
+                        padding-top: $ruler * 4;
+                        text-align: center;
+
+                        @include BreakPoint(phone) {
+                                padding-top: $ruler * 2;
+                        }
+                        & .footer__link {
+                                display: inline-block;
+
+                                & > * {
+                                        color: $primary-font-color;
+                                        font-size: 1.4rem;
+                                        opacity: 0.8;
+                                        text-align: center;
+                                        display: block;
+                                }
+                        }
+                }
+        }
+
+        .col {
+                &__title {
+                        color: $primary-font-color;
+                        margin-bottom: $ruler * 2;
+                }
+
+                &__item {
+                        margin: $ruler 0;
+                }
+
+                &__link {
+                        opacity: 0.8;
+                        color: $primary-font-color;
+                }
+        }
+}

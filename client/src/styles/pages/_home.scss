@@ -1,0 +1,223 @@
+@import "../initial.scss";
+
+.home {
+        flex-direction: column;
+
+        &__banner {
+                width: 40%;
+                height: 550px;
+                @include BreakPoint(tab-land) {
+                        width: 50%;
+                        height: 400px;
+                }
+
+                @include BreakPoint(tab-port) {
+                        width: 80%;
+                }
+                @include BreakPoint(phone) {
+                        width: 90%;
+                        height: 250px;
+                }
+        }
+
+        &__title {
+                color: $secondary-font-color;
+
+                text-align: center;
+                & > * {
+                        display: block;
+                }
+
+                &--sub {
+                        font-size: 2.4rem;
+                        opacity: 0.8;
+                        @include BreakPoint(tab-land) {
+                                font-size: 1.8rem;
+                        }
+                }
+        }
+
+        .btn {
+                &__link {
+                        margin-top: 2.4rem;
+                }
+        }
+
+        &__feature {
+                padding: $ruler * 8 $ruler * 14 0 $ruler * 14;
+                width: 100%;
+                @include BreakPoint(tab-land) {
+                        padding: $ruler * 8 0 0 0;
+                }
+        }
+
+        .feature {
+                color: $secondary-font-color;
+                &__title {
+                        @include BreakPoint(tab-land) {
+                                text-align: center;
+                        }
+                }
+
+                &__col {
+                        display: grid;
+
+                        grid-template-columns: repeat(3, 1fr);
+                        column-gap: 5.6rem;
+                        padding-top: $ruler * 2;
+
+                        &:not(:first-child) {
+                                padding-top: 2.4rem;
+                        }
+
+                        @include BreakPoint(tab-port) {
+                                justify-content: center;
+
+                                grid-template-columns: repeat(1, minmax(25rem, 48rem));
+                                grid-template-rows: repeat(3, 1fr);
+                                row-gap: 2.4rem;
+                        }
+                }
+
+                &__card {
+                        color: $secondary-font-color;
+
+                        padding: $ruler * 5 $ruler * 6;
+                        max-width: 48rem;
+                        box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.16);
+                        text-transform: capitalize;
+                        border-radius: 1rem;
+                        background-color: $semantic-color-light;
+                        background-repeat: no-repeat;
+                        transition: 0.2s ease-in-out;
+
+                        span {
+                                font-size: 2.4rem;
+                                font-weight: bold;
+                                display: block;
+                        }
+
+                        @include BreakPoint(tab-land) {
+                                justify-content: space-between;
+                                padding: $ruler * 5 $ruler * 4 !important;
+                        }
+
+                        @include BreakPoint(big-desktop) {
+                                justify-content: space-evenly;
+                        }
+
+                        &:hover {
+                                transform: scale(1.05);
+                                background-color: $semantic-color-main;
+                        }
+
+                        &-1 {
+                                background-image: url("/asset/icons/home/shape1.svg");
+                                background-position: bottom left;
+                        }
+
+                        &-2 {
+                                background-image: url("/asset/icons/home/shape2-1.svg"),
+                                        url("/asset/icons/home/shape2-2.svg");
+                                background-position: top left, right bottom;
+                                &:hover {
+                                        transform: scale(1.05);
+                                        background-color: $semantic-color-main;
+                                }
+
+                                &-1 {
+                                        background-image: url("/asset/icons/home/shape1.svg");
+                                        background-position: bottom left;
+                                }
+
+                                &-2 {
+                                        background-image: url("/asset/icons/home/shape2-1.svg"),
+                                                url("/asset/icons/home/shape2-2.svg");
+                                        background-position: top left, right bottom;
+                                }
+                        }
+                        &-3 {
+                                background-image: url("/asset/icons/home/shape3.svg");
+                                background-position: bottom right;
+                        }
+                }
+        }
+        .description {
+                margin-top: $ruler * 8;
+                justify-content: stretch;
+                flex-direction: column;
+
+                &__col {
+                        margin-top: $ruler * 4;
+                        column-gap: 12rem;
+                        max-width: 80%;
+                        height: 40rem;
+                        opacity: 0;
+                        & > * {
+                                height: 100%;
+                                flex: 50%;
+                                min-width: 50%;
+                        }
+                        @include FlexCenter(space-between);
+                        @include BreakPoint(tab-land) {
+                                flex-direction: column;
+
+                                max-width: auto;
+                                height: 60rem;
+                                &:nth-child(3) {
+                                        flex-direction: column-reverse;
+                                }
+
+                                & > * {
+                                        height: 50%;
+                                        min-width: initial;
+                                }
+                        }
+                }
+
+                .col {
+                        &__img {
+                                img {
+                                        height: 100%;
+                                        object-fit: fill;
+                                        @include BreakPoint(phone) {
+                                                height: auto;
+                                                width: 100%;
+                                        }
+                                }
+                        }
+
+                        &__content {
+                                display: flex;
+                                align-items: flex-start;
+                                justify-content: center;
+                                flex-direction: column;
+                        }
+                }
+
+                &--appear.fade--left {
+                        animation: FadeInFromLeft 0.75s ease-in-out forwards;
+                }
+
+                &--appear.fade--right {
+                        animation: FadeInFromRight 0.75s ease-in-out forwards;
+                }
+
+                .content {
+                        &__title {
+                                margin-bottom: $ruler * 2;
+                                @include BreakPoint(tab-land) {
+                                        font-size: 2.4rem;
+                                }
+                        }
+
+                        &__text {
+                                opacity: 0.7;
+                                text-indent: 20px;
+                                @include BreakPoint(tab-land) {
+                                        text-indent: 0;
+                                }
+                        }
+                }
+        }
+}

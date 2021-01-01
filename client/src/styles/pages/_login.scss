@@ -1,0 +1,26 @@
+@import "../initial.scss";
+
+.login {
+        flex-direction: column;
+        &__title {
+                margin-bottom: $ruler * 6;
+        }
+
+        &__google {
+                padding: $ruler 2 * $ruler;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                border: none;
+                color: $secondary-font-color;
+                outline: none;
+                cursor: pointer;
+                .icon__wrapper {
+                        margin-right: $ruler;
+                }
+
+                span {
+                        font-size: 1.8rem;
+
+                        font-weight: bold;
+                }
+        }
+}

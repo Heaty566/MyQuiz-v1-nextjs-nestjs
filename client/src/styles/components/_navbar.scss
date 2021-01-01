@@ -1,0 +1,172 @@
+.navbar {
+        height: 6.4rem;
+        background-color: $primary-color-dark;
+        position: fixed;
+        width: 100%;
+        padding: 0 $ruler * 16;
+        z-index: 100;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+        @include BreakPoint(tab-port) {
+                padding: 0 calc(#{$ruler} * 2);
+        }
+}
+.burger {
+        &__btn {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                height: 3.2rem;
+
+                @include BreakPoint(tab-port) {
+                        @include FlexCenter(space-between);
+                }
+
+                span {
+                        transition: 0.2s ease-in;
+                        display: block;
+                        width: 4rem;
+                        border-radius: 2px;
+                        height: 0.8rem;
+                        background-color: $primary-font-color;
+                }
+
+                &--active {
+                        span:first-child {
+                                transform: translate(0, 12px) rotate(45deg);
+                        }
+                        span:nth-child(2) {
+                                opacity: 0;
+                        }
+                        span:last-child {
+                                transform: translate(0, -12px) rotate(-45deg);
+                        }
+                }
+        }
+}
+
+.navbtn {
+        display: flex;
+
+        align-items: center;
+        @include BreakPoint(tab-port) {
+                display: none;
+        }
+        & > * {
+                margin-left: 20px;
+        }
+        &__user {
+                cursor: pointer;
+
+                & .user {
+                        &__avatar {
+                                height: 40px;
+                                width: 40px;
+                                border-radius: 50%;
+                                overflow: hidden;
+
+                                img {
+                                        object-fit: contain;
+                                        height: inherit;
+                                        width: inherit;
+                                }
+                        }
+
+                        &__btn {
+                                margin-left: $ruler;
+                                span {
+                                        border-radius: 50%;
+                                        background-color: $primary-font-color;
+                                        margin: $ruler * 0.5 0;
+                                        display: block;
+                                        height: 0.7rem;
+                                        width: 0.7rem;
+                                }
+                        }
+                }
+        }
+
+        &__btn {
+                color: $primary-font-color;
+                font-size: 1.6rem;
+                font-weight: 500;
+                padding: $ruler $ruler * 2;
+                display: block;
+        }
+        &__search {
+                display: grid;
+                grid-template-columns: 20px auto;
+                column-gap: $ruler;
+                border-radius: 0.3rem;
+                background-color: $primary-color-main;
+                padding: $ruler $ruler * 2;
+                position: relative;
+                &__result {
+                        position: absolute;
+                        width: 100%;
+                        backface-visibility: hidden;
+                        opacity: 0;
+                        top: calc(100% + 5px);
+                        transition: 0.2s ease-in-out;
+                        border-radius: 0 0 0.3rem 0.3rem;
+                        height: 0;
+                        background-color: $primary-color-main;
+                        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
+                        overflow: hidden;
+
+                        &:hover {
+                                opacity: 1;
+                                height: initial;
+                                backface-visibility: visible;
+                        }
+                }
+
+                .search {
+                        &__result {
+                                &__item {
+                                        display: block;
+                                        height: 100%;
+                                }
+
+                                &__link {
+                                        padding: $ruler $ruler * 2;
+                                        display: block;
+                                        transition: 0.2s ease-in-out;
+                                        font-size: 1.4rem;
+                                        color: $primary-font-color;
+
+                                        &:hover {
+                                                font-weight: bold;
+                                                border-left: 10px solid $primary-font-color;
+                                        }
+                                }
+                        }
+                }
+
+                &__box {
+                        color: $primary-font-color;
+                        border: none;
+                        outline: none;
+                        font-size: 1.4rem;
+                        background-color: transparent;
+                        display: block;
+
+                        &:focus {
+                                &::placeholder {
+                                        opacity: 1;
+                                }
+                        }
+
+                        &:focus ~ .navbtn__search__result {
+                                opacity: 1;
+                                height: initial;
+                                backface-visibility: visible;
+                        }
+
+                        &::placeholder {
+                                opacity: 0.6;
+                                transition: 0.2s ease-in-out;
+                                color: $primary-font-color;
+                        }
+                }
+        }
+}

@@ -1,0 +1,93 @@
+@import "../initial.scss";
+
+.take-quiz {
+        padding: 0 20%;
+
+        @include BreakPoint(tab-port) {
+                padding: 0;
+        }
+
+        &__header {
+                text-transform: capitalize;
+                margin-bottom: $ruler;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid rgba($secondary-font-color, 0.3);
+                @include BreakPoint(tab-port) {
+                        flex-direction: column;
+                        padding: $ruler * 2 0;
+                        & > *:first-child {
+                                margin-bottom: $ruler;
+                        }
+                }
+
+                &-right {
+                        display: flex;
+                        align-items: center;
+                        @include BreakPoint(tab-port) {
+                                width: 100%;
+                                justify-content: space-evenly;
+                        }
+                        & > * {
+                                margin-right: $ruler;
+                        }
+                }
+        }
+        &__timer {
+                font-size: 1.8rem !important;
+                font-weight: bold;
+        }
+
+        &__question {
+                word-wrap: break-word;
+                margin-bottom: $ruler * 2;
+        }
+
+        &__btn {
+                display: block;
+                width: 60%;
+                background-color: transparent;
+                outline: none;
+                word-wrap: break-word;
+                border: 2px solid $primary-color-dark;
+                border-radius: 0.3rem;
+                padding: $ruler $ruler * 2;
+                text-transform: capitalize;
+                text-align: left;
+                font-size: 1.6rem;
+                cursor: pointer;
+
+                transition: 0.2s ease-in-out;
+                margin-bottom: 16px;
+                @include BreakPoint(tab-port) {
+                        width: 100%;
+                }
+
+                &:hover,
+                &--select {
+                        background-color: $primary-color-main;
+                        color: $primary-font-color;
+                        border: 2px solid $primary-color-main;
+                }
+
+                &--correct {
+                        background-color: $primary-success-color !important;
+                        color: $primary-font-color;
+                        border: 2px solid $primary-success-color !important;
+                }
+
+                &--wrong {
+                        background-color: $primary-error-color !important;
+                        color: $primary-font-color;
+                        border: 2px solid $primary-error-color !important;
+                }
+        }
+
+        &__footer {
+                display: flex;
+                & > * {
+                        margin-right: $ruler * 2;
+                }
+        }
+}

@@ -1,0 +1,54 @@
+.quiz {
+        &__question {
+                flex: 6;
+        }
+        &__answer {
+                flex: 4;
+        }
+
+        &__menu {
+                & > *:first-child {
+                        flex: 2;
+                }
+                & > *:last-child {
+                        flex: 7;
+                }
+
+                & .menu {
+                        &--right {
+                                display: flex;
+                                column-gap: 20px;
+                                justify-content: flex-end;
+                                align-items: center;
+                        }
+                }
+
+                &__btn {
+                        outline: none;
+                        border: none;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 4px 8px;
+                        cursor: pointer;
+                        font-weight: bold;
+                        transition: 0.2s ease-in-out;
+                        background-color: transparent;
+
+                        &:hover {
+                                color: $primary-color-dark;
+                                transform: scale(1.1);
+                        }
+
+                        & span {
+                                margin-left: 8px;
+                                display: block;
+                        }
+                        & .icon {
+                                width: 1.6rem;
+                                height: 1.6rem;
+                        }
+                }
+        }
+}

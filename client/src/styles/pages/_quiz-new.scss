@@ -1,0 +1,70 @@
+@import "../initial.scss";
+
+.quiz-new {
+        padding: $ruler * 8 10vw;
+        @include BreakPoint(tab-land) {
+                padding: $ruler * 8 2vw;
+        }
+        @include BreakPoint(tab-port) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+        }
+
+        &__title {
+                margin-bottom: $ruler * 2;
+                @include BreakPoint(tab-port) {
+                        text-align: center;
+                }
+        }
+
+        & .form {
+                width: 48rem;
+
+                @include BreakPoint(tab-port) {
+                        width: 32rem;
+                }
+        }
+        &--top {
+                margin: $ruler * 2 0;
+                @include BreakPoint(tab-port) {
+                        display: flex;
+                        justify-content: center;
+                }
+        }
+
+        &--bottom {
+                margin: $ruler * 2 0;
+                @include BreakPoint(tab-port) {
+                        display: flex;
+                        justify-content: center;
+                }
+        }
+
+        &__content {
+                column-gap: $ruler * 3;
+                display: flex;
+                margin-bottom: $ruler * 2;
+
+                @include BreakPoint(tab-port) {
+                        width: 32rem;
+                        flex-direction: column;
+                }
+        }
+        &__check {
+                &__btn {
+                        transition: 0.2s ease-in-out;
+                        opacity: 0.3;
+
+                        &--active {
+                                opacity: 1;
+                        }
+                }
+        }
+
+        & .btn__func {
+                padding: 0.8rem;
+                font-size: 1.4rem;
+        }
+}

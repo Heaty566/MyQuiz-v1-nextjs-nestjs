@@ -1,0 +1,10 @@
+@mixin FlexCenter($justify) {
+        display: flex;
+        align-items: center;
+        justify-content: $justify;
+}
+
+@mixin MaxHeightAndWidth {
+        height: 100%;
+        width: 100%;
+}

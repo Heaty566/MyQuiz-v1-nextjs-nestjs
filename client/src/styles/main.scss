@@ -1,0 +1,20 @@
+@import "./abstracts/variable";
+@import "./abstracts/mixin";
+@import "./abstracts/breakPoint";
+@import "./abstracts/utility";
+@import "./abstracts/animation";
+
+@import "./base/typography";
+@import "./base/base";
+
+@import "./components/quiz";
+@import "./components/common";
+@import "./components/pagination";
+@import "./components/btn";
+@import "./components/card";
+@import "./components/navbar";
+@import "./components/form";
+@import "./components/body";
+@import "./components/footer";
+
+@import "./pages/page";

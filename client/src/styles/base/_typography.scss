@@ -1,0 +1,26 @@
+.typography {
+        & h1 {
+                font-size: 3.2rem;
+                @include BreakPoint(tab-port) {
+                        font-size: 2.4rem;
+                }
+        }
+
+        & h2 {
+                font-size: 2.4rem;
+                @include BreakPoint(tab-port) {
+                        font-size: 1.8rem;
+                }
+        }
+
+        & h3 {
+                font-size: 1.8rem;
+        }
+
+        & h4 {
+                font-size: 1.6rem;
+        }
+        & p {
+                font-size: 1.6rem;
+        }
+}

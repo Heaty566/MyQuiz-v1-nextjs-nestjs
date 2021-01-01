@@ -1,0 +1,13 @@
+@import "../initial.scss";
+
+.profile {
+        flex-direction: column;
+        &__title {
+                margin-bottom: $ruler * 2;
+        }
+
+        & .form {
+                width: 48rem;
+                flex-direction: column;
+        }
+}

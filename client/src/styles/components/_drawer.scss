@@ -1,0 +1,35 @@
+@import "../initial.scss";
+
+.drawer {
+        position: fixed;
+        z-index: 1000;
+        right: 0;
+        height: 100%;
+        width: 20%;
+        background-color: $primary-font-color;
+        transform: translateX(150%);
+        transition: 0.4s ease-in;
+        padding: calc(#{$ruler} * 3) calc(#{$ruler} * 2);
+
+        @include BreakPoint(tab-port) {
+                width: 60%;
+        }
+        &--active {
+                transform: translate(0);
+        }
+
+        &__mask {
+                position: absolute;
+                z-index: 999;
+                height: 100%;
+                opacity: 0.8;
+                visibility: hidden;
+                transition: 0.3s ease-in;
+                width: 100%;
+
+                &--active {
+                        visibility: initial;
+                        background-color: rgba(0, 0, 0, 0.87);
+                }
+        }
+}
